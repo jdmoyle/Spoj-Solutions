@@ -47,9 +47,11 @@ int main() {
 		if(a==b) continue;
 		a--,b--;
 		
-		//it doesnot matter if b has a higher hill ,,  
+		//using abs() for b<a
 		int j=abs(b-a);
 		int m=hills[a];
+		
+		//it doesnot matter if b has a higher hill ,,
 		//check till b-1;
 		if(m>=max(st[a][Log[j]],st[b-(1<<Log[j])][Log[j]]))
 		ans++;
