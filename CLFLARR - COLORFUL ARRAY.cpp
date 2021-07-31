@@ -1,5 +1,5 @@
 //O(n);
-
+//NOTE: Using DSU is a faster solution in O(logn);
 #include <iostream>
 #include<cstring>
 using namespace std;
