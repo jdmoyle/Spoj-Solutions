@@ -3,7 +3,8 @@
 #include<vector>
 using namespace std;
 
-vector<int> preffixF(string s,vector<int> &pi){
+int preffixF(string s,int k,vector<int> &pi){
+	int ans=0;
 	for(int i=1;i<s.size();i++){
 		int l=pi[i-1];
 		while(l>0 && s[i]!=s[l]){
@@ -13,8 +14,11 @@ vector<int> preffixF(string s,vector<int> &pi){
 			l++;
 		}
 		pi[i]=l;
+		if(l==k){
+			ans++;
+		}
 	}
-	return pi;
+	return ans;
 }
 
 int main() {
@@ -29,28 +33,19 @@ int main() {
 		cin>>t>>s;
 		t=s+'#'+t;
 		int n=t.size();
+		int k=s.size();
 		vector<int> pi(n);
 		pi[0]=0;
-		pi=preffixF(t,pi);
-		bool flag=false;
-		int ans=0;
-		vector<int> v;
-		for(int i=0;i<n;i++){
-			if(pi[i]==s.size()){
-				ans++;
-				v.emplace_back(i-2*s.size()+1);
-				flag=true;
-			}
-		}
-		if(flag==false){
+		int ans=preffixF(t,k,pi);
+		if(ans==0){
 			cout<<"Not Found"<<endl;
 		}
 		else{
 			cout<<ans<<endl;
-			for(auto it:v){
-				cout<<it<<" ";
+			for(int i=k+1;i<n;i++){
+				if(pi[i]==k)
+				cout<<i-2*k+1<<endl;
 			}
-			cout<<endl;
 		}
 		cout<<endl;
 	}
