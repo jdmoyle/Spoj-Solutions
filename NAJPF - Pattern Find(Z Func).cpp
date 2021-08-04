@@ -23,6 +23,10 @@ int ZFunc(string s,int k,vector<int>& z){
 }
 
 int main() {
+	
+	ios_base::sync_with_stdio(false);
+	cin.tie(NULL);
+	cout.tie(NULL);
 	int t;
 	cin>>t;
 	while(t--){
