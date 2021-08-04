@@ -1,4 +1,4 @@
-//faster than RKA Hash
+//faster than ZFunc and RKA Hash
 #include <iostream>
 #include<vector>
 using namespace std;
