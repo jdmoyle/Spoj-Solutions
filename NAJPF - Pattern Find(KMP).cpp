@@ -18,6 +18,10 @@ vector<int> preffixF(string s,vector<int> &pi){
 }
 
 int main() {
+	
+	ios_base::sync_with_stdio(false);
+	cin.tie(NULL);
+	cout.tie(NULL);
 	int tc;
 	cin>>tc;
 	while(tc--){
